@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SD Consultancy - Home</title>
+<meta name="description" content="Helping India hire smart for 20+ years. Search jobs, connect with HR experts, and get placed.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+ <!-- 🌟 Favicon Icon for Taskbar/Browser Tab -->
+  <link rel="icon" href="logo.png" type="png" />
+
+  <!-- Optional: Apple Icon and Other Support -->
+  <link rel="apple-touch-icon" href="logo.png" />
+<style>
+/* ===== GLOBAL RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body,html{height:100%;overflow-x:hidden;scroll-behavior:smooth;}
+a{text-decoration:none;cursor:pointer;}
+
+/* ===== HEADER ===== */
+header{position:absolute;top:0;width:100%;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;z-index:10;}
+header h1{color:white;font-size:26px;font-weight:700;}
+nav{display:flex;gap:15px;align-items:center;}
+nav a{color:white;margin:0 10px;font-weight:500;transition:color 0.3s ease;}
+nav a:hover{color:#ffcd05;}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;}
+.hamburger div{width:25px;height:3px;background:white;border-radius:2px;}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* makes it a circle */
+  object-fit: cover;
+  /* optional border for better visibility */
+}
+
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;padding:0 20px;}
+.hero video{position:absolute;top:0;left:0;object-fit:cover;width:100%;height:100%;z-index:-1;}
+.hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:0;}
+.hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.hero h2{font-size:48px;font-weight:700;}
+.hero p{font-size:18px;}
+.search-box{display:flex;width:100%;max-width:600px;background:white;border-radius:30px;overflow:hidden;box-shadow:0 0 25px rgba(0,0,0,0.2);}
+.search-box input{flex:1;border:none;padding:15px 20px;font-size:16px;outline:none;}
+.search-box button{background:#ffcd05;border:none;padding:0 30px;cursor:pointer;font-size:18px;font-weight:600;display:flex;align-items:center;}
+
+/* ===== ABOUT ===== */
+.about{background:#f9f9f9;text-align:center;padding:80px 20px;}
+.about h3{font-size:32px;margin-bottom:20px;}
+.about p{max-width:800px;margin:auto;font-size:18px;line-height:1.6;}
+
+
+
+/* ===== SERVICES ===== */
+.services{background:#2b2c34;text-align:center;padding:80px 20px;}
+.services h3{font-size:32px;margin-bottom:20px;color: white;}
+.service-item{margin:20px 0;font-size:18px;}
+
+/* ===== MODAL ===== */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:1000;}
+.modal-content{background:white;color:#000;padding:30px;border-radius:12px;max-width:600px;width:90%;position:relative;animation:fadeIn 0.3s ease;}
+.modal-close{position:absolute;top:15px;right:20px;cursor:pointer;font-size:22px;}
+.modal h2{margin-bottom:10px;}
+.modal small{color:#666;}
+.modal ul{margin-left:20px;}
+.modal button{background:#ffcd05;border:none;padding:12px 18px;font-weight:600;border-radius:8px;margin-top:20px;cursor:pointer;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ===== CURSOR ===== */
+body{cursor:none;}
+.cursor-dot,.cursor-follower{position:fixed;top:0;left:0;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);z-index:2000;}
+.cursor-dot{width:8px;height:8px;background:#ffcd05;}
+.cursor-follower{width:30px;height:30px;border:2px solid #ffcd05;opacity:0.7;}
+
+/* ===== FOOTER ===== */
+.footer{background:#111;color:#ccc;padding:30px 20px;text-align:center;font-size:14px;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{position:fixed;top:0;right:0;background:rgba(0,0,0,0.85);height:100%;width:220px;flex-direction:column;padding:80px 20px;transform:translateX(100%);transition:transform .3s;}
+  nav.open{transform:translateX(0);}
+  .hamburger{display:flex;}
+}
+
+
+/* ===== ADVANCED ABOUT US (service-style) ===== */
+.about {
+  background: var(--bg, #0f1018);
+  color: var(--text, #e8eaf2);
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+.about-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction:column;
+  gap: 60px;
+}
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+.about-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.about-tagline h3,
+.about-tagline .subhead {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+}
+.subhead {
+  font-size: 1rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color: #c7cdd8;
+  margin-bottom:8px;
+}
+.about-lead {
+  flex:1 1 500px;
+  min-width:260px;
+}
+.highlight {
+  font-size:1.1rem;
+  font-weight:600;
+  line-height:1.5;
+  margin:0;
+  color: #e8edf7;
+}
+
+/* Grid boxes */
+.about-grid {
+  display: grid;
+  gap:30px;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+}
+.about-box {
+  background: rgba(255,255,255,0.04);
+  padding:24px 20px;
+  border-radius:14px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 40px 80px -10px rgba(0,0,0,.6);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.about-box h4 {
+  margin:0 0 6px;
+  font-size:1.3rem;
+  font-weight:700;
+}
+.about-box p {
+  margin:0;
+  font-size:0.95rem;
+  line-height:1.5;
+  color: #c7cdd8;
+}
+
+/* Metrics */
+.metrics {
+  display: flex;
+  gap:24px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.metric-card {
+  background: var(--card, #1f2435);
+  flex:1 1 160px;
+  min-width:140px;
+  padding:18px 16px;
+  border-radius:12px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  transition: transform .3s ease;
+}
+.metric-number {
+  font-size:1.8rem;
+  font-weight:800;
+  margin-bottom:6px;
+  color: var(--accent, #ffcd05);
+}
+.metric-label {
+  font-size:0.75rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#aaa;
+}
+.metric-card:hover { transform: translateY(-3px); }
+
+/* Values */
+.values {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.values h4 {
+  margin:0 0 8px;
+  font-size:1.8rem;
+  font-weight:800;
+}
+.values-grid {
+  display:grid;
+  gap:24px;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+}
+.value-item {
+  background: rgba(255,255,255,0.03);
+  padding:18px 16px;
+  border-radius:12px;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.value-item .icon {
+  font-size:1.8rem;
+  flex-shrink:0;
+}
+.value-item strong {
+  display:block;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.value-item p {
+  margin:0;
+  font-size:0.85rem;
+  line-height:1.4;
+  color:#c7cdd8;
+}
+
+/* CTA */
+.about-cta {
+  background: linear-gradient(135deg,#1f2435 0%,#0f1018 80%);
+  padding:30px 28px;
+  border-radius:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  align-items:center;
+  justify-content:space-between;
+}
+.cta-text {
+  flex:1 1 360px;
+  min-width:260px;
+}
+.cta-text h4 {
+  margin:0 0 8px;
+  font-size:1.8rem;
+  font-weight:800;
+}
+.cta-text p {
+  margin:0;
+  font-size:1rem;
+  color:#c7cdd8;
+}
+.cta-action {
+  flex:0 0 auto;
+}
+.cta-btn {
+  background: var(--accent, #ffcd05);
+  border:none;
+  padding:14px 22px;
+  font-weight:600;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:1rem;
+  color:#0f1018;
+  transition: filter .2s ease;
+}
+.cta-btn:hover { filter:brightness(1.05); }
+
+/* Responsive */
+@media (max-width:1000px){
+  .about-hero { flex-direction:column; }
+  .about-cta { flex-direction:column; }
+}
+
+/* ===== CONTACT SECTION (home) ===== */
+.contact {
+  background: linear-gradient(135deg,#1f2435 0%,#0f1018 85%);
+  padding: 100px 20px;
+  color: #e8edf7;
+  font-family: 'Poppins', system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+.contact-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.contact-info {
+  flex:1 1 340px;
+  min-width:280px;
+  background: rgba(255,255,255,0.03);
+  padding:30px 24px;
+  border-radius:14px;
+  position:relative;
+  box-shadow:0 40px 80px -10px rgba(0,0,0,.6);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.contact-info h3 {
+  font-size:2rem;
+  margin:0;
+  font-weight:700;
+}
+.contact-info p {
+  margin:0;
+  font-size:1rem;
+  color:#c7cdd8;
+}
+.detail-row {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:0.9rem;
+  margin-top:8px;
+}
+.note {
+  font-size:0.75rem;
+  color:#8c93a3;
+  margin-top:6px;
+}
+.contact-form-card {
+  flex:1 1 500px;
+  min-width:300px;
+  background: #1f2435;
+  padding:36px 28px;
+  border-radius:16px;
+  position:relative;
+  box-shadow:0 40px 100px -10px rgba(0,0,0,.7);
+}
+.contact-form-card h3 {
+  margin:0 0 6px;
+  font-size:1.9rem;
+  font-weight:800;
+}
+.contact-form-card p {
+  margin:0 0 18px;
+  color:#c7cdd8;
+  font-size:1rem;
+}
+.row {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.field {
+  flex:1 1 220px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  position:relative;
+}
+.field label {
+  font-size:0.65rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:4px;
+}
+.field input,
+.field textarea {
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  color:#fff;
+  font-size:1rem;
+  font-family:inherit;
+  resize:vertical;
+}
+.field input[type="file"] { padding:8px 10px; }
+.error {
+  color:#ff6b6b;
+  font-size:0.75rem;
+  margin-top:4px;
+}
+.small-note {
+  font-size:0.75rem;
+  color:#8c93a3;
+  margin-top:8px;
+}
+@media (max-width:1000px){
+  .contact-wrapper { flex-direction:column; }
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  background: #0f1018;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.testimonial-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  overflow: hidden;
+}
+.testimonial-card {
+  min-width: 100%;
+  padding: 30px;
+  background: #1f2435;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.author {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #ffcd05;
+}
+.testimonial-controls {
+  margin-top: 20px;
+}
+.testimonial-controls button {
+  background: #ffcd05;
+  border: none;
+  padding: 10px 14px;
+  margin: 0 5px;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.testimonial-controls button:hover {
+  background: #ffd633;
+}
+
+/* ===== FAQ ===== */
+.faq {
+  background: #1f2435;
+  color: #fff;
+  padding: 80px 20px;
+}
+.faq-item {
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.faq-question {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  padding: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-answer {
+  display: none;
+  padding: 0 14px 14px;
+  color: #c7cdd8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.faq-item.active .faq-answer {
+  display: block;
+}
+.faq-question span {
+  transition: transform 0.3s ease;
+  font-size: 1.4rem;
+}
+/* Testimonials */
+.testimonials {
+  background: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000;
+}
+.testimonial-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.testimonial-card {
+  flex: 0 0 100%;
+  background: white;
+  padding: 30px;
+  margin: 0 10px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.testimonial-card p {
+  font-style: italic;
+  color: #444;
+}
+.testimonial-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+.testimonial-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.stars {
+  color: #ffcd05;
+  font-size: 1rem;
+}
+.testimonial-controls button {
+  background: #ffcd05;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.testimonial-dots {
+  margin-top: 15px;
+}
+.testimonial-dots span {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background: #ccc;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.testimonial-dots .active {
+  background: #ffcd05;
+}
+
+/* FAQ */
+/* Enhanced accordion behavior */
+  .faq-item {
+    background:#ffffff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 30px 80px -10px rgba(31,42,68,.08);
+    border:1px solid #e8ebf3;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  
+  .faq-question {
+    width:100%;
+    background:none;
+    border:none;
+    padding:18px 22px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    font-size:1rem;
+    font-weight:600;
+    position:relative;
+  }
+  .faq-question .icon {
+    font-size:1.6rem;
+    line-height:1;
+    transition:transform .3s ease,color .3s ease;
+    color:#1f2a44;
+  }
+  .faq-answer {
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .4s cubic-bezier(.25,.8,.25,1), padding .3s ease;
+    padding:0 22px;
+    background:#f5f8fc;
+  }
+  .faq-answer p {
+    margin:16px 0;
+    font-size:.95rem;
+    line-height:1.5;
+    color:#4f5d7a;
+  }
+  .faq-item.active .faq-answer {
+    padding:0 22px 16px;
+    max-height:500px;
+  }
+  .faq-item.active .faq-question .icon {
+    
+    color:#ffcd05;
+  }
+
+    .faq-item,
+.faq-item * {
+  transform: none !important;
+  rotate: 0deg !important;
+}
+  /* Filter button active override */
+  .faq-filter-btn.active {
+    background:#ffcd05 !important;
+    color:#1f1018 !important;
+    box-shadow:0 15px 40px -5px rgba(255,205,5,0.4) !important;
+  }
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background: #ffffff; /* dark card bg */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.7s ease forwards;
+  color: black;
+}
+
+.service-card:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  color: #ffcd05; /* golden yellow accent */
+}
+
+.service-card p {
+  color: white; /* soft white text */
+  margin-bottom: 15px;
+}
+
+.service-card button {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffcd05;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-card button:hover {
+  background: #ffcd05;
+  color: #000000;
+}
+.hero-cta {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+}
+
+.advanced-action {
+  position:relative;
+  background: linear-gradient(135deg,#ffcd05 0%,#f5b800 70%);
+  border:none;
+  padding:16px 28px;
+  font-size:1.1rem;
+  font-weight:700;
+  border-radius:999px;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:#0f1018;
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .3s ease;
+  box-shadow:0 20px 60px -10px rgba(255,205,5,0.6);
+}
+
+.advanced-action .badge {
+  background:#1f2435;
+  color:#ffcd05;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:0.65rem;
+  text-transform:uppercase;
+  margin-left:4px;
+}
+
+.advanced-action .arrow {
+  display:inline-block;
+  font-size:1.3rem;
+  transition:transform .3s ease;
+}
+
+.advanced-action:hover {
+  transform:translateY(-2px);
+  box-shadow:0 25px 80px -5px rgba(255,205,5,0.8);
+}
+
+.advanced-action:hover .arrow {
+  transform:translateX(6px);
+}
+
+.advanced-action:focus-visible {
+  outline:3px solid rgba(255,205,5,0.8);
+  outline-offset:2px;
+}
+
+.subtext {
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.9);
+  max-width:500px;
+  text-align:center;
+}
+
+
+/* ===== PRIVACY POPUP STYLING ===== */
+.privacy-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.privacy-popup {
+  background: #1a1a1f;
+  color: #fff;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.privacy-popup h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.privacy-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.privacy-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.privacy-link {
+  margin-left: 16px;
+  color: #ffd700;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.policy-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.policy-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.policy-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+}
+
+.policy-close:hover {
+  color: red;
+}
+
+.policy-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.policy-text p,
+.policy-text ul {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.policy-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* JOB lists*/
+.explore-jobs {
+  background: white;
+  color: #000;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.explore-jobs .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.explore-jobs .section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.explore-jobs .section-subtitle {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.job-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px;
+  text-align: left;
+  max-width: 600px;
+}
+
+.job-highlights li {
+  font-size: 16px;
+  margin: 10px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.job-highlights li::before {
+  content: "💼";
+  position: absolute;
+  left: 0;
+}
+
+.explore-btn {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.explore-btn:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-follower"></div>
+
+<!-- HEADER -->
+<header>
+   <div class="logo-container">
+    <img src="logo1.png" alt="Logo" class="logo-img">
+    <h1>SD Consultancy</h1>
+  </div>
+  <div class="hamburger"><div></div><div></div><div></div></div>
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="service.html">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="v2.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2>Your Talent, Our Network</h2>
+    <p>Helping India hire smart for 20+ years. Search jobs, connect with HR experts, and get placed.</p>
+
+    <!-- Advanced CTA -->
+    <div class="hero-cta">
+      <button class="advanced-action" id="goto-contact" aria-label="Contact">
+        <span class="label">Let’s Connect</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- JS to smooth-scroll to contact -->
+<script>
+document.getElementById('goto-contact')?.addEventListener('click', e => {
+  e.preventDefault();
+  const target = document.getElementById('contact');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#contact');
+  }
+});
+</script>
+
+
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-container">
+    <div class="about-hero">
+      <div class="about-tagline">
+        <h3>About Us</h3>
+        <p class="subhead">Building Talent Advantage. Powering Growth.</p>
+      </div>
+      <div class="about-lead">
+        <p class="highlight">
+          SD Consultancy is the strategic talent partner for organisations and professionals across India. For over 20 years, we’ve combined deep industry insight with a human-first approach to connect high-potential talent with high-impact opportunity.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-box">
+        <h4>Our Mission</h4>
+        <p>To transform hiring into a predictable, scalable, and inclusive engine of growth—helping companies secure the right people and professionals find careers that matter.</p>
+      </div>
+      <div class="about-box">
+        <h4>Why We're Different</h4>
+        <p>We don’t do generic matching. We map culture, future trajectory, and capability, then source, evaluate, and place talent with longevity and alignment in mind. Our dual focus on employer outcomes and candidate journeys creates partnerships that last.</p>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-number">20+</div>
+        <div class="metric-label">Years of Impact</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">10,000+</div>
+        <div class="metric-label">Successful Placements</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">400+</div>
+        <div class="metric-label">Domain Experts</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">30+</div>
+        <div class="metric-label">Industries Served</div>
+      </div>
+    </div>
+
+    <div class="values">
+      <h4>Our Core Principles</h4>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="icon">🛡️</div>
+          <div>
+            <strong>Integrity</strong>
+            <p>Transparent advice and honest execution.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="icon">🤝</div>
+          <div>
+            <strong>Partnership</strong>
+            <p>Embedded with clients and candidates alike.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="icon">🧠</div>
+          <div>
+            <strong>Innovation</strong>
+            <p>Data-informed, continuously evolving hiring.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="icon">🌍</div>
+          <div>
+            <strong>Diversity</strong>
+            <p>Inclusive pipelines that drive performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cta">
+      <div class="cta-text">
+        <h4>Ready to Elevate Your Talent Strategy?</h4>
+        <p>Whether you're scaling teams or advancing careers, partner with SD Consultancy for tailored, measurable, and future-fit hiring solutions.</p>
+        <small style="display:block;margin-top:6px;font-size:0.8rem;color:#c7cdd8;">No obligation. Custom hiring roadmap in 24–48h.</small>
+      </div>
+      <div class="cta-action">
+        <button class="cta-btn" id="get-started">Start Your Hiring Journey</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED MODAL -->
+<div class="modal-backdrop" id="get-started-modal">
+  <div class="modal">
+    <button class="modal-close" id="close-get-started">&times;</button>
+    <h2>Start Your Hiring Journey</h2>
+    <p>Tell us your priority; we’ll tailor a plan.</p>
+
+    <form id="get-started-form">
+      <div class="form-group">
+        <label for="gs-name">Full Name</label>
+        <input type="text" id="gs-name" name="name" required placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label for="gs-email">Email</label>
+        <input type="email" id="gs-email" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="gs-company">Company</label>
+        <input type="text" id="gs-company" name="company" placeholder="Company name">
+      </div>
+      <div class="form-group">
+        <label for="gs-message">Brief Requirements</label>
+        <textarea id="gs-message" name="message" rows="4" placeholder="What roles or skills are you hiring for?"></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Submit</button>
+      <div id="get-started-feedback" style="margin-top:10px;font-size:0.9rem;"></div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- JOBS -->
+ <section class="explore-jobs">
+  <div class="container">
+    <h2 class="section-title">Shape Your Future with Us</h2>
+    <p class="section-subtitle">
+      Whether you're just starting out or looking for your next big move, we help you find the perfect job match across industries and roles. Let your career journey begin here.
+    </p>
+    <ul class="job-highlights">
+      <li>✔ 500+ Verified Job Openings Weekly</li>
+      <li>✔ AI-based Smart Matching</li>
+      <li>✔ Personalized Job Alerts</li>
+      <li>✔ Interview Preparation & Resume Assistance</li>
+    </ul>
+    <a href="job-listing.html" class="explore-btn">Explore Our Jobs</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <h3>Job Seeker Services</h3>
+  <div class="services-grid" id="servicesGrid">
+    <div class="service-card">
+      <h3 style="color: #000;">📝 Resume Building Services</h3>
+      <p style="color: #000;">Professional resume crafting with industry-ready templates to grab recruiter attention.</p>
+      <button><a href="resume.html"  style="color: #000;">Get This Service</a></button>
+    </div>
+
+    <div class="service-card">
+      <h3 style="color: #000;">🎤 Interview Preparation</h3>
+      <p style="color: #000;">1-on-1 mock interviews, tips, and techniques to confidently crack your dream job.</p>
+      <button><a href="interview_prep.html" style="color: #000;">Get This Service</a></button>
+    </div>
+
+    <div class="service-card">
+      <h3 style="color: #000;">📚 Skill Training Programs</h3>
+      <p style="color: #000;">Upgrade your skills with curated certification courses in tech, HR, and management.</p>
+      <button><a href="training_program.html"  style="color: #000;">Get This Service</a></button>
+    </div>
+
+    <div class="service-card">
+      <h3 style="color: #000;">🔔 Job Alerts Subscription</h3>
+      <p style="color: #000;">Get instant notifications on latest jobs matching your skills, experience, and location.</p>
+      <button><a href="job_alerts.html" style="color: #000;">Get This Service</a></button>
+    </div>
+
+    <div class="service-card">
+      <h3 style="color: #000;">👩‍💼 1-on-1 Career Counseling</h3>
+      <p style="color: #000;">Talk to industry experts for guidance on career direction, salary, and next steps.</p>
+      <button><a href="career_councilling.html" style="color: #000;">Get This Service</a></button>
+    </div>
+
+    <div class="service-card">
+      <h3 style="color: #000;">💎 Premium Membership Plans</h3>
+      <p style="color: #000;">Enjoy exclusive benefits including profile boost, recruiter connect, and VIP support.</p>
+      <button><a href="membership.html" style="color: #000;">Explore Plans</a></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <h3 class="section-title">What Our Clients Say</h3>
+  <div class="testimonial-carousel">
+    <div class="testimonial-track" id="testimonial-track">
+      <div class="testimonial-card">
+        <p>"SD Consultancy transformed our hiring process. Within weeks, we had top-tier candidates we never thought possible."</p>
+        <div class="testimonial-info">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+          <div>
+            <h4 style="color: #000;">Ananya Rao</h4>
+            <small style="color: #000;">HR Head, TechWave</small>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Professional, efficient, and deeply understanding of our needs. A true partner in growth."</p>
+        <div class="testimonial-info">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+          <div>
+            <h4 style="color: #000;">Rahul Sharma</h4>
+            <small style="color: #000;">CEO, GreenMind</small>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Their team went above and beyond to source niche talent for us. We’ll definitely work with them again."</p>
+        <div class="testimonial-info">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client">
+          <div>
+            <h4 style="color: #000;">Priya Nair</h4>
+            <small style="color: #000;">COO, FinEdge</small>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<!-- ADVANCED STYLED FAQ SECTION -->
+<section id="faq" aria-label="Frequently asked questions" style="font-family:'Poppins',system-ui; padding:100px 16px; background: #2b2c34;">
+  <div style="max-width:1120px;margin:0 auto;display:flex;gap:50px;flex-wrap:wrap;">
+    <!-- Sidebar / Controls -->
+    <div style="flex:1 1 260px;min-width:240px;top:100px;">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:2rem;font-weight:700;line-height:1.1;color: white;">FAQs</div>
+        <div style="color:#d8d5d5;margin-top:4px;font-size:0.9rem;">Find answers fast or browse by topic.</div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <input id="faq-search" placeholder="Search questions..." aria-label="Search FAQ"
+          style="width:100%;padding:14px 16px;border-radius:12px;border:1px solid #d9e2ec;font-size:0.9rem;outline:none;box-shadow:0 10px 30px -5px rgba(0,0,0,0.05);transition:border .2s;">
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+        <button class="faq-filter-btn active" data-cat="all" aria-pressed="true"
+          style="flex:1;padding:10px 14px;border:none;border-radius:999px;cursor:pointer;background:#ffcd05;color:#1f1018;font-weight:600;font-size:0.8rem;box-shadow:0 10px 25px -5px rgba(255,205,5,0.4);transition:filter .2s;">
+          All
+        </button>
+        <button class="faq-filter-btn" data-cat="hiring" aria-pressed="false"
+          style="flex:1;padding:10px 14px;border:none;border-radius:999px;cursor:pointer;background:#e8ebf3;color:#1f2a44;font-weight:600;font-size:0.8rem;transition:background .2s;">
+          Hiring
+        </button>
+        <button class="faq-filter-btn" data-cat="process" aria-pressed="false"
+          style="flex:1;padding:10px 14px;border:none;border-radius:999px;cursor:pointer;background:#e8ebf3;color:#1f2a44;font-weight:600;font-size:0.8rem;transition:background .2s;">
+          Process
+        </button>
+        <button class="faq-filter-btn" data-cat="support" aria-pressed="false"
+          style="flex:1;padding:10px 14px;border:none;border-radius:999px;cursor:pointer;background:#e8ebf3;color:#1f2a44;font-weight:600;font-size:0.8rem;transition:background .2s;">
+          Support
+        </button>
+      </div>
+      <div style="display:flex;gap:12px;margin-bottom:12px;">
+        <button id="expand-all"
+          style="flex:1;padding:10px;border-radius:8px;border:1px solid #c5cdd9;background:#fff;cursor:pointer;font-size:.75rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;">
+          Expand all
+        </button>
+        <button id="collapse-all"
+          style="flex:1;padding:10px;border-radius:8px;border:1px solid #c5cdd9;background:#fff;cursor:pointer;font-size:.75rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;">
+          Collapse all
+        </button>
+      </div>
+      <div style="font-size:.75rem;color:#d8d5d5;">
+        Tip: Type a keyword above to filter relevant questions instantly.
+      </div>
+    </div>
+
+    <!-- FAQ list -->
+    <div style="flex:2 1 600px;min-width:320px;">
+      <div id="faq-list" aria-live="polite" style="display:grid;gap:18px;">
+        <!-- FAQ items -->
+        <div class="faq-item" data-category="hiring">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">How quickly can you fill a role?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>It depends on role complexity and market dynamics, but typical mid-level positions are filled within 2–4 weeks. Executive or niche technical roles may take longer due to targeted sourcing and alignment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="process">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">What is your recruitment process?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p >We begin with discovery and alignment, followed by talent mapping, structured evaluation, and placement. Post-hire check-ins ensure early retention and fit.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="support">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">Do you offer post-placement support?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We provide onboarding alignment, feedback loops, and early-stage retention support to maximize long-term success of placements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="hiring">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">Do you work with startups?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Our strategies are tailored—whether you’re a lean early-stage team or scaling rapidly, we build a hiring roadmap that fits your pace and culture.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="process">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">How do you ensure cultural fit?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>We conduct cultural diagnostics during discovery, use structured behavioral interviews, and align candidate motives with your organizational values before shortlisting.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="support">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">Can I change priorities mid-engagement?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Our model is adaptive—just communicate shifts in priorities, and we recalibrate sourcing, evaluation, and outreach without losing momentum.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="hiring">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">Do you provide background checks?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We can integrate employment history, education verification, and optional criminal or reference checks depending on the role and your compliance needs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="process">
+          <button class="faq-question" aria-expanded="false">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:#ffcd05;width:6px;height:6px;border-radius:50%;margin-right:8px;"></div>
+              <span style="flex:1;font-size:1.05rem;font-weight:600;color:#1f2a44;">What differentiates your approach from generic recruiters?</span>
+            </div>
+            <div class="icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-answer">
+            <p>We combine strategic talent advising, cultural alignment, and data-driven sourcing rather than transactional CV matching. Retention and long-term value are built in, not bolted on.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p>Let’s design your talent strategy. Whether you’re hiring, scaling, or advancing your career—reach out and we’ll tailor a plan.</p>
+      <div class="detail-row">
+        <div><strong>Email:</strong> info@sdconsultancy.in</div>
+        <div><strong>Phone:</strong> +91 98765 43210</div>
+        <div><strong>Location:</strong> Mumbai, India</div>
+      </div>
+      <small class="note">Prefer a quick call? Mention your preferred time in the message and we’ll schedule a slot.</small>
+    </div>
+    <div class="contact-form-card">
+      <div id="contact-feedback" aria-live="polite"></div>
+      <h3>Start a Conversation</h3>
+      <p>Fill in the details and our team will get back within 1 business day.</p>
+      <form id="contactForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="cf-name">Full Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+            <div class="error" data-for="name" style="display:none;">Please enter your name.</div>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+            <div class="error" data-for="email" style="display:none;">Enter a valid email.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cf-company">Company / Organization</label>
+            <input type="text" id="cf-company" name="company" placeholder="Company name">
+          </div>
+          <div class="field">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="+91 98765 43210">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-message">Brief Requirements</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="What are you looking to solve?" required></textarea>
+          <div class="error" data-for="message" style="display:none;">Please describe your requirement.</div>
+        </div>
+        <div class="field">
+          <label for="cf-resume">Upload Resume / JD <span style="font-weight:400;">(optional, PDF/DOCX, max 5MB)</span></label>
+          <input type="file" id="cf-resume" name="resume" accept=".pdf,.doc,.docx">
+        </div>
+        <button type="submit" class="cta-btn" id="submit-contact">Submit Request</button>
+        <div class="small-note">By submitting, you agree to our privacy policy. We'll never share your data without consent.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+ <footer class="footer">
+  © <span id="year"></span> SD Consultancy. All rights reserved.
+  <a href="javascript:void(0);" onclick="openPolicyPopup()" style="color: #ffcd05;">Privacy & Policy | Terms & Conditions</a>
+</footer>
+
+<!-- Privacy Policy & Terms Popup -->
+<div class="policy-popup" id="policyPopup">
+  <div class="policy-content">
+    <span class="policy-close" onclick="closePolicyPopup()">&times;</span>
+    <h2 style="color: #ffcd05;">Privacy Policy & Terms and Conditions</h2>
+    <div class="policy-text">
+      <p><strong>1. Introduction</strong></p>
+      <p>Welcome to SD Recruiter Consultancy. These terms and conditions outline the rules and regulations for the use of our website.</p>
+
+      <p><strong>2. Acceptance of Terms</strong></p>
+      <p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use our website if you do not accept all of the terms stated on this page.</p>
+
+      <p><strong>3. Information We Collect</strong></p>
+      <p>We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, fill out a form, and in connection with other activities, services, features or resources we make available.</p>
+
+      <p><strong>4. Use of Collected Information</strong></p>
+      <p>The information we collect is used to improve customer service, personalize user experience, and improve our site.</p>
+
+      <p><strong>5. Cookies</strong></p>
+      <p>We employ the use of cookies. By using our website you consent to the use of cookies in accordance with SD Recruiter Consultancy’s privacy policy.</p>
+
+      <p><strong>6. License</strong></p>
+      <p>Unless otherwise stated, SD Recruiter Consultancy and/or its licensors own the intellectual property rights for all material on the website. All intellectual property rights are reserved.</p>
+
+      <p><strong>7. Restrictions</strong></p>
+      <ul>
+        <li>Publishing any website material in any other media</li>
+        <li>Selling, sublicensing and/or otherwise commercializing any website material</li>
+        <li>Using this website in any way that is or may be damaging to this website</li>
+        <li>Using this website contrary to applicable laws and regulations</li>
+      </ul>
+
+      <p><strong>8. Your Privacy</strong></p>
+      <p>We respect your privacy and are committed to protecting it through our compliance with this policy.</p>
+
+      <p><strong>9. Changes to this Policy</strong></p>
+      <p>We reserve the right to update our Privacy Policy and Terms & Conditions at any time. Changes will be posted on this page with a revised effective date.</p>
+
+      <p><strong>10. Contact Us</strong></p>
+      <p>If you have any questions about these Terms or the practices of this site, please contact us at: support@sdrecruiter.com</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+// ===== CURSOR SCRIPT =====
+const dot = document.querySelector('.cursor-dot'),
+      follower = document.querySelector('.cursor-follower');
+let mx = 0, my = 0, px = 0, py = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX;
+  my = e.clientY;
+  dot.style.transform = `translate(${mx}px,${my}px)`;
+});
+(function loop(){
+  px += (mx - px) * 0.16;
+  py += (my - py) * 0.16;
+  follower.style.transform = `translate(${px}px,${py}px)`;
+  requestAnimationFrame(loop);
+})();
+
+// ===== MOBILE MENU =====
+document.querySelector('.hamburger').addEventListener('click', () =>
+  document.querySelector('nav').classList.toggle('open')
+);
+
+
+
+// ===== YEAR =====
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ===== GET STARTED SCROLL =====
+document.getElementById('get-started')?.addEventListener('click', () => {
+  const target = document.getElementById('contact');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// ===== CONTACT FORM LOGIC =====
+const contactForm = document.getElementById('contactForm');
+const feedbackEl = document.getElementById('contact-feedback');
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    // reset errors
+    contactForm.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+    feedbackEl.innerHTML = '';
+
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    let valid = true;
+    if (!name) { document.querySelector('[data-for="name"]').style.display='block'; valid = false; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.querySelector('[data-for="email"]').style.display='block'; valid = false; }
+    if (!message) { document.querySelector('[data-for="message"]').style.display='block'; valid = false; }
+    if (!valid) return;
+
+    // simulate success
+    feedbackEl.innerHTML = '<div style="background:rgba(138,255,171,0.1);color:#8fffab;padding:12px;border-radius:8px;margin-bottom:12px;font-size:0.9rem;">Thank you! We received your request and will get back to you soon.</div>';
+    contactForm.reset();
+  });
+}
+
+// ===== GET STARTED MODAL =====
+const getStartedBtn = document.getElementById('get-started');
+const getStartedModal = document.getElementById('get-started-modal');
+const closeGetStarted = document.getElementById('close-get-started');
+
+getStartedBtn.addEventListener('click', () => {
+  getStartedModal.style.display = 'flex';
+});
+closeGetStarted.addEventListener('click', () => {
+  getStartedModal.style.display = 'none';
+});
+window.addEventListener('click', e => {
+  if (e.target === getStartedModal) getStartedModal.style.display = 'none';
+});
+
+// ===== FORM SUBMIT =====
+document.getElementById('get-started-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('gs-name').value.trim();
+  const email = document.getElementById('gs-email').value.trim();
+  const feedback = document.getElementById('get-started-feedback');
+
+  if (!name || !email) {
+    feedback.textContent = 'Please fill in required fields.';
+    feedback.style.color = '#ffb3b3';
+    return;
+  }
+
+  feedback.textContent = 'Thank you! We will contact you soon.';
+  feedback.style.color = '#8fffab';
+  e.target.reset();
+});
+
+
+
+// Testimonials Carousel Logic
+let currentTestimonial = 0;
+const testimonialTrack = document.getElementById('testimonial-track');
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const testimonialDotsContainer = document.getElementById('testimonial-dots');
+
+
+function showTestimonial(index) {
+  currentTestimonial = index;
+  testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+
+}
+
+
+// Auto-slide
+setInterval(() => {
+  currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+  showTestimonial(currentTestimonial);
+}, 5000);
+
+// FAQ Accordion Logic
+(function(){
+  const faqList = document.getElementById('faq-list');
+  const searchInput = document.getElementById('faq-search');
+  const filterButtons = document.querySelectorAll('.faq-filter-btn');
+  const expandAllBtn = document.getElementById('expand-all');
+  const collapseAllBtn = document.getElementById('collapse-all');
+  let currentCategory = 'all';
+
+  // Setup each accordion item
+  function setupItem(item){
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      const isActive = item.classList.toggle('active');
+      btn.setAttribute('aria-expanded', isActive);
+    });
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  }
+  faqList.querySelectorAll('.faq-item').forEach(setupItem);
+
+  // Filtering by category buttons
+  filterButtons.forEach(b => {
+    b.addEventListener('click', () => {
+      filterButtons.forEach(x => {
+        x.classList.remove('active');
+        x.setAttribute('aria-pressed','false');
+      });
+      b.classList.add('active');
+      b.setAttribute('aria-pressed','true');
+      currentCategory = b.dataset.cat;
+      applyFilters();
+    });
+  });
+
+  // Search input
+  searchInput.addEventListener('input', applyFilters);
+
+  function applyFilters(){
+    const query = (searchInput.value || '').trim().toLowerCase();
+    faqList.querySelectorAll('.faq-item').forEach(item => {
+      const text = item.innerText.toLowerCase();
+      const cat = item.dataset.category;
+      const categoryMatch = currentCategory === 'all' || cat === currentCategory;
+      const searchMatch = !query || text.includes(query);
+      if (categoryMatch && searchMatch) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('active');
+        item.querySelector('.faq-question')?.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // Expand / collapse all
+  expandAllBtn.addEventListener('click', () => {
+    faqList.querySelectorAll('.faq-item').forEach(item=>{
+      if (item.style.display === 'none') return;
+      item.classList.add('active');
+      item.querySelector('.faq-question')?.setAttribute('aria-expanded','true');
+    });
+  });
+  collapseAllBtn.addEventListener('click', () => {
+    faqList.querySelectorAll('.faq-item').forEach(item=>{
+      item.classList.remove('active');
+      item.querySelector('.faq-question')?.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // Initial filter state
+  applyFilters();
+})();
+</script>
+
+
+<!--Privacy pop up-->
+<script>
+  const openPrivacy = document.getElementById('open-privacy');
+  const privacyPopup = document.getElementById('privacy-popup');
+  const closePrivacy = document.getElementById('close-privacy');
+
+  openPrivacy.addEventListener('click', function (e) {
+    e.preventDefault();
+    privacyPopup.style.display = 'flex';
+  });
+
+  closePrivacy.addEventListener('click', function () {
+    privacyPopup.style.display = 'none';
+  });
+
+  // Optional: close on backdrop click
+  privacyPopup.addEventListener('click', function (e) {
+    if (e.target === privacyPopup) {
+      privacyPopup.style.display = 'none';
+    }
+  });
+
+  function openPolicyPopup() {
+    document.getElementById("policyPopup").style.display = "block";
+  }
+
+  function closePolicyPopup() {
+    document.getElementById("policyPopup").style.display = "none";
+  }
+</script>
+
+
+</body>
+</html>

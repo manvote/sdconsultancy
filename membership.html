@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Membership Plans | SD Recruitment</title>
+  <!-- 🌟 Favicon Icon for Taskbar/Browser Tab -->
+  <link rel="icon" href="logo.png" type="png" />
+
+  <!-- Optional: Apple Icon and Other Support -->
+  <link rel="apple-touch-icon" href="logo.png" />
+  <style>
+    :root {
+      --primary: #0a0f2c;
+      --accent: #ffcd05;
+      --text: #ffffff;
+      --bg: #0f0f0f;
+      --card: #1c1c1c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      color: var(--accent);
+    }
+
+    section.intro {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    section.intro h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    section.intro p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .plan-card {
+      background-color: var(--card);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 30px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(255, 205, 5, 0.3);
+    }
+
+    .plan-card h3 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .plan-card .price {
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .plan-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .plan-card ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    .plan-card ul li::before {
+      content: "✔";
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .plan-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .plan-card .price {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Premium Membership Plans</h1>
+  </header>
+
+  <section class="intro">
+    <h2>Unlock Elite Job Opportunities</h2>
+    <p>Join our Premium Membership and gain exclusive access to personalized career services, top-tier job openings, and expert mentorship. Choose the plan that suits your career goals best.</p>
+  </section>
+
+  <section class="plans">
+    <div class="plan-card">
+      <h3>Basic</h3>
+      <div class="price">₹499/month</div>
+      <ul>
+        <li>Resume Optimization</li>
+        <li>Email Job Alerts</li>
+        <li>Priority Application</li>
+        <li>Interview Tips E-book</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <h3>Professional</h3>
+      <div class="price">₹999/month</div>
+      <ul>
+        <li>Everything in Basic</li>
+        <li>1-on-1 Career Consultation</li>
+        <li>Exclusive Job Openings</li>
+        <li>LinkedIn Profile Enhancement</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <h3>Elite</h3>
+      <div class="price">₹1999/month</div>
+      <ul>
+        <li>Everything in Professional</li>
+        <li>Dedicated Career Coach</li>
+        <li>Mock Interviews (2/month)</li>
+        <li>Lifetime Premium Access</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 SD Recruitment Consultancy | Designed with ❤ for career growth
+  </footer>
+
+</body>
+</html>

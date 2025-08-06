@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Preparation Services - SD Recruitment Consultancy</title>
+  <!-- 🌟 Favicon Icon for Taskbar/Browser Tab -->
+  <link rel="icon" href="logo.png" type="png" />
+
+  <!-- Optional: Apple Icon and Other Support -->
+  <link rel="apple-touch-icon" href="logo.png" />
+  <style>
+    /* --- GLOBAL RESET --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0a0f2c;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* --- HEADER --- */
+    header {
+      background: linear-gradient(to right, #000, #0a0f2c);
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid #ffcd05;
+    }
+
+    header h1 {
+      color: #ffcd05;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+
+    /* --- SERVICE OVERVIEW --- */
+    .intro {
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #fff;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* --- FEATURES GRID --- */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .feature-box {
+      background-color: #121735;
+      border-left: 5px solid #ffcd05;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .feature-box:hover {
+      background-color: #1b214c;
+      transform: translateY(-5px);
+    }
+
+    .feature-box h3 {
+      color: #ffcd05;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    /* --- CONTACT FORM --- */
+    .contact {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #ffcd05;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #121735;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background-color: #0a0f2c;
+      border: 1px solid #555;
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    form button {
+      background-color: #ffcd05;
+      color: #000;
+      padding: 12px 25px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    form button:hover {
+      background-color: #e6b800;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #ccc;
+      margin-top: 40px;
+    }
+
+    /* --- ANIMATIONS --- */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-animate].visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .intro h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Interview Preparation Services</h1>
+    <p>Boost your confidence and ace your dream job interviews</p>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro" data-animate>
+    <h2>Why Choose Our Preparation Program?</h2>
+    <p>Our interview preparation services are designed to help you confidently face any interview scenario — whether you're a fresher or a professional. From mock interviews to personalized coaching, we provide end-to-end support to ensure you stand out.</p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" data-animate>
+    <div class="feature-box">
+      <h3>Mock Interviews</h3>
+      <p>Real-time simulated interview sessions with HR and technical experts to sharpen your speaking, response, and confidence.</p>
+    </div>
+    <div class="feature-box">
+      <h3>HR Round Coaching</h3>
+      <p>Guided sessions to help you answer behavioral questions, handle stress rounds, and show your personality effectively.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Technical Review</h3>
+      <p>One-on-one feedback on your domain-specific knowledge, coding test readiness, and real-world project discussions.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Resume-Interview Sync</h3>
+      <p>We help you align your resume with the interview conversation flow so that every line you’ve written is confidently defendable.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact" data-animate>
+    <h2>Request a Free Demo Interview</h2>
+    <form onsubmit="sendEmail(); return false;">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <textarea id="message" rows="5" placeholder="Tell us what help you need..." required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SD Recruitment Consultancy. All rights reserved.
+  </footer>
+
+  <!-- SCRIPT FOR ANIMATION + EMAIL -->
+  <script>
+    // Animate on scroll
+    const animateItems = document.querySelectorAll("[data-animate]");
+    const animateOnScroll = () => {
+      animateItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          item.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+
+    // Email placeholder
+    function sendEmail() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      alert`(Thank you, ${name}! We will contact you shortly at ${email}.)`;
+      // You can integrate EmailJS or backend API later
+    }
+  </script>
+</body>
+</html>

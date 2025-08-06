@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services - SD Recruiter Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Advanced recruitment services from SD Recruiter Consultancy. Strategic hiring, executive search, RPO, BPO, IT hiring and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- 🌟 Favicon Icon for Taskbar/Browser Tab -->
+  <link rel="icon" href="logo.png" type="png" />
+
+  <!-- Optional: Apple Icon and Other Support -->
+  <link rel="apple-touch-icon" href="logo.png" />
+  <style>
+    :root {
+      --bg:#0f1018;
+      --card:#1f2435;
+      --accent:#ffcd05;
+      --text:#e8eaf2;
+      --muted:#8c93a3;
+      --radius:14px;
+      --shadow:0 40px 80px -10px rgba(0,0,0,.5);
+      --transition:.35s cubic-bezier(.22,.18,.36,1);
+      font-family: 'Poppins', system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    }
+    *{box-sizing:border-box;}
+    body {
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      min-height:100%;
+      overflow-x:hidden;
+      position:relative;
+    }
+    a {color:inherit; text-decoration:none;}
+    header {
+      position:sticky;
+      top:0;
+      z-index:200;
+      background: rgba(15,16,24,0.9);
+      backdrop-filter: blur(10px);
+      padding:18px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .logo { font-weight:700; font-size:1.2rem; letter-spacing:1px; }
+    nav { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+    nav a { position:relative; font-size:0.9rem; font-weight:500; padding:6px 4px; cursor:pointer; color:#ccc; transition: color .25s ease; }
+    nav a.active, nav a:hover { color:#fff; }
+    nav a::after {
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:3px;
+      background: var(--accent);
+      border-radius:2px;
+      transition: width .3s ease;
+    }
+    nav a.active::after, nav a:hover::after { width:100%; }
+
+
+    .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+    main {
+      max-width: 1240px;
+      margin:0 auto;
+      padding:120px 20px 80px;
+    }
+
+    /* Custom cursor */
+    .cursor-dot, .cursor-follower {
+      position: fixed;
+      top:0;
+      left:0;
+      pointer-events:none;
+      border-radius:50%;
+      transform: translate(-50%,-50%);
+      mix-blend-mode: difference;
+      z-index:9999;
+      transition: background .2s ease, transform .15s ease;
+    }
+    .cursor-dot { width:6px; height:6px; background:#fff; }
+    .cursor-follower { width:36px; height:36px; border:2px solid rgba(255,255,255,.5); }
+
+    /* Hero + tabs */
+    .hero {
+      display:flex;
+      flex-wrap:wrap;
+      gap:60px;
+      margin-bottom:80px;
+      align-items:flex-start;
+    }
+    .hero-left {
+      flex:1 1 360px;
+      min-width:280px;
+    }
+    .hero-left h1 {
+      font-size:2.8rem;
+      margin:0 0 12px;
+      font-weight:800;
+      line-height:1.05;
+    }
+    .hero-left p {
+      margin:0 0 24px;
+      font-size:1.1rem;
+      color:#c7cdd8;
+    }
+    .service-tabs {
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-bottom:30px;
+    }
+    .tab {
+      background: rgba(255,255,255,0.08);
+      padding:12px 18px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      transition: all .3s ease;
+      flex:1 1 140px;
+      min-width:120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      position: relative;
+    }
+    .tab.active {
+      background: var(--accent);
+      color:#0f1018;
+    }
+
+    .hero-right {
+      flex:1 1 480px;
+      min-width:280px;
+      position:relative;
+    }
+
+    .detail {
+      background: var(--card);
+      border-radius:16px;
+      padding:30px 28px;
+      display:flex;
+      gap:40px;
+      flex-wrap:wrap;
+      align-items:start;
+      position:relative;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .detail-text {
+      flex:1 1 300px;
+      min-width:260px;
+    }
+    .detail-text h2 {
+      margin:0 0 10px;
+      font-size:2.2rem;
+      font-weight:800;
+      line-height:1.1;
+    }
+    .detail-text p {
+      margin:0;
+      line-height:1.5;
+      font-size:1rem;
+      color:#d1d7e0;
+    }
+    .learn-more-wrapper {
+      margin-top:16px;
+    }
+    .learn-more-btn {
+      display:inline-block;
+      margin-top:8px;
+      background: transparent;
+      border:2px solid var(--accent);
+      padding:10px 18px;
+      border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+      color: var(--accent);
+      transition: background .25s ease, color .25s ease;
+    }
+    .learn-more-btn:hover {
+      background: var(--accent);
+      color:#0f1018;
+    }
+    .detail-image-wrapper {
+      flex:1 1 320px;
+      min-width:240px;
+      perspective:1200px;
+      position:relative;
+    }
+    .detail-image {
+      width:100%;
+      padding-bottom:75%;
+      border-radius:16px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      overflow:hidden;
+      transition: transform .6s ease, opacity .4s ease;
+      will-change:transform;
+    }
+    .detail-image::after {
+      content:'';
+      position:absolute;
+      inset:0;
+      background: linear-gradient(135deg,rgba(0,0,0,0.15),rgba(0,0,0,0));
+      pointer-events:none;
+      border-radius:16px;
+    }
+    .icon-float {
+      position:absolute;
+      right:10px;
+      bottom:10px;
+      opacity:.5;
+    }
+
+    /* Stats */
+    .stats {
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      margin:60px 0 40px;
+      justify-content:center;
+    }
+    .stat {
+      background: var(--card);
+      flex:1 1 160px;
+      min-width:140px;
+      padding:18px 16px;
+      border-radius:12px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      transition: transform .3s ease;
+    }
+    .stat h3 {
+      margin:0;
+      font-size:1.4rem;
+      line-height:1.1;
+    }
+    .stat small {
+      display:block;
+      margin-top:6px;
+      font-size:0.65rem;
+      color: #888;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .stat .number {
+      font-size:2rem;
+      font-weight:700;
+      margin-top:6px;
+    }
+    .stat:hover { transform: translateY(-4px); }
+
+    /* Expanded services */
+    .extra-services {
+      display:grid;
+      gap:30px;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      margin-top:60px;
+    }
+    .service-card {
+      background: var(--card);
+      padding:20px 18px;
+      border-radius:12px;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition: transform .3s ease;
+    }
+    .service-card h4 {
+      margin:0;
+      font-size:1.2rem;
+      font-weight:700;
+    }
+    .service-card p {
+      margin:0;
+      font-size:0.9rem;
+      color:#c7cdd8;
+      flex:1;
+    }
+    .service-card button {
+      background: var(--accent);
+      border:none;
+      padding:10px 16px;
+      border-radius:6px;
+      cursor:pointer;
+      font-weight:600;
+      margin-top:8px;
+      align-self:start;
+      color:#0f1018;
+    }
+    .service-card:hover { transform: translateY(-3px); }
+
+    /* Process */
+    .process {
+      margin:80px 0;
+    }
+    .process h2 {
+      font-size:2.6rem;
+      margin-bottom:8px;
+      font-weight:800;
+    }
+    .process p {
+      margin:0 0 30px;
+      color:#c7cdd8;
+    }
+    .steps {
+      display:grid;
+      gap:30px;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    }
+    .step {
+      background: var(--card);
+      padding:20px 18px;
+      border-radius:12px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition: transform .35s ease;
+    }
+    .step-number {
+      font-size:1.2rem;
+      font-weight:700;
+      color: var(--accent);
+    }
+    .step-title {
+      font-size:1.25rem;
+      font-weight:700;
+      margin:0;
+    }
+    .step-desc {
+      font-size:0.95rem;
+      margin:0;
+      line-height:1.4;
+      color:#d1d7e0;
+    }
+    .step:hover { transform: translateY(-4px); }
+
+    /* Testimonials */
+    .testimonials {
+      margin:80px 0;
+    }
+    .testimonials h2 {
+      font-size:2.4rem;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+    .testimonials p {
+      margin:0 0 30px;
+      color:#c7cdd8;
+    }
+    .carousel {
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      padding-bottom:10px;
+      scroll-behavior:smooth;
+    }
+    .testimonial {
+      flex:0 0 300px;
+      background: var(--card);
+      padding:20px 18px;
+      border-radius:12px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-width:260px;
+      scroll-snap-align:start;
+    }
+    .testimonial .quote {
+      font-size:1rem;
+      line-height:1.4;
+    }
+    .testimonial .author {
+      margin-top:auto;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .author-photo {
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      overflow:hidden;
+      flex-shrink:0;
+      background:#222;
+    }
+    .author-info {
+      font-size:0.85rem;
+    }
+    .author-info strong { display:block; }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg,#1f2435 0%,#0f1018 80%);
+      padding:60px 30px;
+      border-radius:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:40px;
+      align-items:center;
+      margin:100px 0 60px;
+    }
+    .cta-text {
+      flex:1 1 360px;
+      min-width:260px;
+    }
+    .cta-text h2 {
+      margin:0 0 10px;
+      font-size:2.4rem;
+      font-weight:800;
+    }
+    .cta-text p {
+      margin:0 0 20px;
+      font-size:1rem;
+      color:#c7cdd8;
+    }
+    .cta button {
+      background: var(--accent);
+      border:none;
+      padding:14px 24px;
+      font-weight:600;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:1rem;
+      transition: filter .2s ease;
+    }
+    .cta button:hover { filter:brightness(1.05); }
+
+    footer {
+      padding:40px 20px;
+      text-align:center;
+      font-size:.85rem;
+      color:#aaa;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset:0;
+      background: rgba(15,16,24,0.85);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      z-index:999;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .25s ease;
+    }
+    .modal-backdrop.active {
+      opacity:1;
+      pointer-events:auto;
+    }
+    .modal {
+      background: #0f1224;
+      border-radius:14px;
+      max-width:900px;
+      width:100%;
+      position:relative;
+      padding:30px 30px 40px;
+      box-shadow:0 40px 100px -10px rgba(0,0,0,.7);
+      display:flex;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+    .modal-close {
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:rgba(255,255,255,0.07);
+      border:none;
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      color:#fff;
+    }
+    .modal .left, .modal .right { flex:1 1 320px; min-width:260px; }
+    .modal h2 {
+      margin-top:0;
+      font-size:2rem;
+    }
+    .service-features {
+      list-style: disc;
+      padding-left:18px;
+      margin:8px 0 16px;
+    }
+    .modal small {
+      display:block;
+      margin-bottom:8px;
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:#888;
+    }
+    .btn-primary {
+      background: var(--accent);
+      border:none;
+      padding:12px 20px;
+      font-weight:600;
+      border-radius:8px;
+      cursor:pointer;
+      color:#0f172a;
+    }
+    .form-group {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-bottom:12px;
+    }
+    .form-group input, .form-group textarea {
+      padding:12px 14px;
+      border-radius:8px;
+      border:1px solid #2f3456;
+      background:#0f172a;
+      color:#fff;
+      font-family:inherit;
+      font-size:0.9rem;
+      resize:vertical;
+    }
+    .inline-tags {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin:6px 0 12px;
+    }
+    .tag {
+      background: rgba(255,205,5,0.1);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:0.65rem;
+      font-weight:600;
+    }
+    .hidden { display:none; }
+
+    /* Reveal */
+    .reveal { opacity:0; transform: translateY(12px); transition: all .6s ease-out; }
+    .reveal.active { opacity:1; transform: translateY(0); }
+
+    @media (max-width:1100px){
+      .hero { flex-direction:column; }
+      .detail { flex-direction:column; }
+      .modal { flex-direction:column; }
+    }
+
+    /* ===== PRIVACY POPUP STYLING ===== */
+.privacy-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.privacy-popup {
+  background: #1a1a1f;
+  color: #fff;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.privacy-popup h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.privacy-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.privacy-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.privacy-link {
+  margin-left: 16px;
+  color: #ffd700;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.policy-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.policy-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  color: #000;
+}
+
+.policy-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.policy-close:hover {
+  color: red;
+}
+
+.policy-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.policy-text p,
+.policy-text ul {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.policy-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/*Consultation form*/
+    .modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.modal-content textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+  </style>
+
+  <!-- Analytics placeholder (replace with real GA4 ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-XXXXXXX',{ 'anonymize_ip': true });
+    function trackEvent(name, params={}) {
+      if (typeof gtag === 'function') gtag('event', name, params);
+      else console.log('[Analytics]', name, params);
+    }
+  </script>
+</head>
+<body>
+  <!-- cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <header>
+    <div class="logo-container">
+  <img src="logo.png" alt="Logo" class="logo-img">
+  <div class="logo">SD Recruiter Consultancy</div>
+</div>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+      <a href="#" class="active">Services</a>
+      <a href="index.html">About</a>
+      <a href="index.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero with service selection -->
+    <div class="hero">
+      <div class="hero-left reveal">
+        <h1>Your Talent, Our Network</h1>
+        <p>Strategic recruitment services tailored to your organization—leadership, operations, technology, and beyond.</p>
+        <div class="service-tabs" role="tablist" aria-label="Service categories">
+          <div class="tab active" data-key="Executive Search" data-title="Executive Search" data-desc="Targeted executive search to place senior leadership aligned with your vision and culture. We map leadership needs, headhunt passive candidates, and ensure cultural fit." data-img="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800">Executive Search</div>
+          <div class="tab" data-key="Permanent Staffing" data-title="Permanent Staffing" data-desc="Permanent staffing with cultural-fit matching and rigorous vetting to ensure long-term retention and performance." data-img="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=800">Permanent Staffing</div>
+          <div class="tab" data-key="RPdataO" -title="RPO" data-desc="Embedded recruitment teams to scale your hiring with predictability and efficiency." data-img="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800">RPO</div>
+          <div class="tab" data-key="HR Consulting" data-title="HR Consulting" data-desc="Optimize people operations and retention through strategic HR advisory and system design." data-img="https://images.pexels.com/photos/1181416/pexels-photo-1181416.jpeg?auto=compress&cs=tinysrgb&w=800">HR Consulting</div>
+          <div class="tab" data-key="BPO" data-title="BPO" data-desc="Outsource business processes with domain-expert staffing that keeps operations smooth." data-img="https://images.pexels.com/photos/3183171/pexels-photo-3183171.jpeg?auto=compress&cs=tinysrgb&w=800">BPO</div>
+          <div class="tab" data-key="IT Hiring" data-title="IT Hiring" data-desc="Technical talent acquisition for digital transformation, from engineering to infrastructure." data-img="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800">IT Hiring</div>
+        </div>
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="number" data-target="20">0</div>
+            <h3>Years Experience</h3>
+            <small>Legacy of trust</small>
+          </div>
+          <div class="stat">
+            <div class="number" data-target="400">0</div>
+            <h3>Recruitment Experts</h3>
+            <small>Domain specialists</small>
+          </div>
+          <div class="stat">
+            <div class="number" data-target="10000">0</div>
+            <h3>Placements</h3>
+            <small>Successful matches</small>
+          </div>
+          <div class="stat">
+            <div class="number" data-target="30">0</div>
+            <h3>Industries</h3>
+            <small>Diverse sectors</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right reveal" id="service-detail">
+        <div class="detail">
+          <div class="detail-text">
+            <h2 id="detail-title">Executive Search</h2>
+            <p id="detail-desc">Targeted executive search to place senior leadership aligned with your vision and culture. We map leadership needs, headhunt passive candidates, and ensure cultural fit.</p>
+            <div class="learn-more-wrapper">
+              <button class="learn-more-btn" id="open-service-modal" data-service="Executive Search">Learn More →</button>
+            </div>
+          </div>
+          <div class="detail-image-wrapper">
+            <div class="detail-image" id="detail-image" role="img" aria-label="Service image" style="background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+            <div class="icon-float">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other services -->
+    <div class="extra-services reveal">
+      <div class="service-card" data-key="Diversity & Inclusion Hiring">
+        <h4>Diversity & Inclusion Hiring</h4>
+        <p>Build diverse, high-performing teams with equitable sourcing and evaluation strategies.</p>
+        <button data-service="Diversity & Inclusion Hiring" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="Employer Branding">
+        <h4>Employer Branding</h4>
+        <p>Position your employer value proposition to attract top-tier talent with compelling narratives.</p>
+        <button data-service="Employer Branding" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="Campus Recruitment">
+        <h4>Campus Recruitment</h4>
+        <p>Design and execute campus hiring campaigns to secure early-career talent aligned with future growth.</p>
+        <button data-service="Campus Recruitment" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="Contract Staffing">
+        <h4>Contract Staffing</h4>
+        <p>Flexible staffing for project-based needs without long-term commitment.</p>
+        <button data-service="Contract Staffing" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="HR Technology Integration">
+        <h4>HR Tech Integration</h4>
+        <p>Integrate and optimize ATS/HRIS systems to make recruitment data-driven and efficient.</p>
+        <button data-service="HR Technology Integration" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="Outplacement">
+        <h4>Outplacement</h4>
+        <p>Support transitioning employees with dignity through coaching and placement services.</p>
+        <button data-service="Outplacement" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="Talent Advisory">
+        <h4>Talent Advisory</h4>
+        <p>Strategic workforce planning to align human capital with business trajectory.</p>
+        <button data-service="Talent Advisory" class="card-learn-more">Learn More</button>
+      </div>
+      <div class="service-card" data-key="Career Coaching">
+        <h4>Career Coaching</h4>
+        <p>Ensure hires thrive with leadership development and onboarding support to reduce attrition.</p>
+        <button data-service="Career Coaching" class="card-learn-more">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <div class="process reveal">
+      <h2>How We Work</h2>
+      <p>Our methodology blends insight, rigor, and relationship-building to deliver lasting talent solutions.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-title">Discovery & Alignment</div>
+          <div class="step-desc">Understand culture, growth plans, and role requirements to shape the hiring blueprint.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-title">Talent Mapping</div>
+          <div class="step-desc">Proactively source and build pipelines of best-fit active and passive candidates.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-title">Engagement & Evaluation</div>
+          <div class="step-desc">Assess candidates with structured interviews and cultural fit evaluation.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-title">Placement & Onboarding</div>
+          <div class="step-desc">Facilitate offer negotiation and ensure smooth integration for retention.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials reveal">
+      <h2>What Our Clients Say</h2>
+      <p>Feedback from partners who’ve scaled hiring with SD Recruiter Consultancy.</p>
+      <div class="carousel" aria-label="Client testimonials">
+        <div class="testimonial">
+          <div class="quote">"Their executive search helped us find leadership that truly understood our mission. Seamless from start to finish."</div>
+          <div class="author">
+            <div class="author-info">
+              <strong>Ravi Kumar</strong>
+              <div>HR Head, TechNova</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote">"The RPO engagement transformed our campus hiring—efficient, integrated, and data-driven."</div>
+          <div class="author">
+            <div class="author-info">
+              <strong>Priya Shenoy</strong>
+              <div>Talent Lead, FinEdge</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="quote">"Their BPO staffing gave us reliable operational support while we focused on growth."</div>
+          <div class="author">
+            <div class="author-info">
+              <strong>Amit Desai</strong>
+              <div>CEO, GreenWorks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta reveal">
+      <div class="cta-text">
+        <h2>Ready to Build Your Talent Advantage?</h2>
+        <p>Partner with us for strategic hiring, scalable talent solutions, and measurable impact. Let’s tailor a plan that fits your growth trajectory.</p>
+        <button id="get-started" class="btn-primary">Get Started</button>
+      </div>
+      <div style="flex:1 1 300px; min-width:220px;">
+        <div style="background:rgba(255,255,255,0.05); border-radius:12px; padding:20px;">
+          <h4 style="margin:0 0 8px;">Speak with an Expert</h4>
+          <p style="margin:0 0 12px;">Schedule a free consultation and customize your recruitment strategy.</p>
+          <button id="book-call" class="btn-primary">Book a Call</button>
+        </div>
+      </div>
+    </div>
+  </main>
+<!-- FOOTER -->
+ <footer class="footer">
+  © <span id="year"></span> SD Consultancy. All rights reserved.
+  <a href="javascript:void(0);" onclick="openPolicyPopup()">Privacy & Policy | Terms & Conditions</a>
+</footer>
+
+<!-- Privacy Policy & Terms Popup -->
+<div class="policy-popup" id="policyPopup">
+  <div class="policy-content">
+    <span class="policy-close" onclick="closePolicyPopup()">&times;</span>
+    <h2 style="color: #ffcd05;">Privacy Policy & Terms and Conditions</h2>
+    <div class="policy-text">
+      <p><strong>1. Introduction</strong></p>
+      <p>Welcome to SD Recruiter Consultancy. These terms and conditions outline the rules and regulations for the use of our website.</p>
+
+      <p><strong>2. Acceptance of Terms</strong></p>
+      <p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use our website if you do not accept all of the terms stated on this page.</p>
+
+      <p><strong>3. Information We Collect</strong></p>
+      <p>We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, fill out a form, and in connection with other activities, services, features or resources we make available.</p>
+
+      <p><strong>4. Use of Collected Information</strong></p>
+      <p>The information we collect is used to improve customer service, personalize user experience, and improve our site.</p>
+
+      <p><strong>5. Cookies</strong></p>
+      <p>We employ the use of cookies. By using our website you consent to the use of cookies in accordance with SD Recruiter Consultancy’s privacy policy.</p>
+
+      <p><strong>6. License</strong></p>
+      <p>Unless otherwise stated, SD Recruiter Consultancy and/or its licensors own the intellectual property rights for all material on the website. All intellectual property rights are reserved.</p>
+
+      <p><strong>7. Restrictions</strong></p>
+      <ul>
+        <li>Publishing any website material in any other media</li>
+        <li>Selling, sublicensing and/or otherwise commercializing any website material</li>
+        <li>Using this website in any way that is or may be damaging to this website</li>
+        <li>Using this website contrary to applicable laws and regulations</li>
+      </ul>
+
+      <p><strong>8. Your Privacy</strong></p>
+      <p>We respect your privacy and are committed to protecting it through our compliance with this policy.</p>
+
+      <p><strong>9. Changes to this Policy</strong></p>
+      <p>We reserve the right to update our Privacy Policy and Terms & Conditions at any time. Changes will be posted on this page with a revised effective date.</p>
+
+      <p><strong>10. Contact Us</strong></p>
+      <p>If you have any questions about these Terms or the practices of this site, please contact us at: support@sdrecruiter.com</p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Service detail / forms modal -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Detail modal">
+      <button class="modal-close" aria-label="Close modal" id="modal-close">&times;</button>
+      <div class="left">
+        <small id="modal-category">Service</small>
+        <h2 id="modal-title">Executive Search</h2>
+        <p id="modal-intro">Deep consultative executive search to place transformational leaders.</p>
+        <div>
+          <strong>Core Offerings:</strong>
+          <ul class="service-features" id="modal-features">
+            <!-- dynamic -->
+          </ul>
+        </div>
+        <div>
+          <strong>Why Choose This Service?</strong>
+          <p id="modal-why">We combine market mapping, confidential outreach, and cultural fit evaluation to ensure leadership longevity.</p>
+        </div>
+        <div style="margin-top:8px;">
+          <button class="btn-primary" id="modal-action">Request Consultation</button>
+        </div>
+      </div>
+      <div class="right">
+        <div style="margin-bottom:14px;">
+          <div class="inline-tags">
+            <div class="tag" id="tag1">Strategic</div>
+            <div class="tag" id="tag2">Custom-fit</div>
+            <div class="tag" id="tag3">Data-driven</div>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div style="border-radius:12px; overflow:hidden;">
+            <div style="background-size:cover; background-position:center; width:100%; padding-bottom:66%; border-radius:12px;" id="modal-image"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Get Started / Book Call modal -->
+  <div class="modal-backdrop" id="form-backdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Form modal">
+      <button class="modal-close" aria-label="Close modal" id="form-close">&times;</button>
+      <div class="left" style="flex:1 1 400px;">
+        <h2 id="form-title">Get Started</h2>
+        <p id="form-sub">Share your requirements and our team will reach out to craft a tailored talent solution.</p>
+        <form id="lead-form" novalidate>
+          <div class="form-group">
+            <label for="lead-name">Name</label>
+            <input type="text" id="lead-name" name="name" required placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label for="lead-email">Email</label>
+            <input type="email" id="lead-email" name="email" required placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="lead-company">Company</label>
+            <input type="text" id="lead-company" name="company" required placeholder="Company name">
+          </div>
+          <div class="form-group">
+            <label for="lead-message">Brief Requirements</label>
+            <textarea id="lead-message" name="message" rows="4" required placeholder="What are you looking to solve?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="lead-submit">Submit</button>
+          <div id="lead-feedback" style="margin-top:8px; font-size:0.9rem;"></div>
+        </form>
+      </div>
+      <div class="right" style="flex:1 1 260px; min-width:220px;">
+        <h4>Why partner with us?</h4>
+        <p style="margin:6px 0;">Customized strategy, accelerated hiring, measurable outcomes, and after-placement support — all under one roof.</p>
+        <div class="inline-tags">
+          <div class="tag">Fast Turnaround</div>
+          <div class="tag">Dedicated Expert</div>
+          <div class="tag">Retention Focused</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Consultation Form-->
+
+  <!-- Consultation Modal -->
+<div id="consultationModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">×</span>
+    <h2>Request a Free Consultation</h2>
+    <form id="consultationForm">
+      <input type="text" name="user_name" placeholder="Your Full Name" required />
+      <input type="email" name="user_email" placeholder="Your Email" required />
+      <input type="text" name="user_phone" placeholder="Phone Number" required />
+      <textarea name="user_message" placeholder="Describe your requirement" required></textarea>
+      <button type="submit" class="btn-primary">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+
+  <script>
+    // DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // Cursor
+      const dot = document.querySelector('.cursor-dot');
+      const follower = document.querySelector('.cursor-follower');
+      let mx=0, my=0, px=0, py=0;
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        if (dot) dot.style.transform = `translate(${mx}px, ${my}px)`;
+      });
+      const loop = () => {
+        px += (mx - px) * 0.16;
+        py += (my - py) * 0.16;
+        if (follower) follower.style.transform = `translate(${px}px, ${py}px)`;
+        requestAnimationFrame(loop);
+      };
+      loop();
+
+      // Service content mapping
+      const mapping = {
+        "Executive Search": {
+          title: "Executive Search",
+          desc: "Targeted executive search to place senior leadership aligned with your vision and culture. We map leadership needs, headhunt passive candidates, and ensure cultural fit.",
+          img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Leadership needs assessment",
+            "Confidential market mapping",
+            "Passive candidate engagement",
+            "Behavioral & cultural evaluation",
+            "Offer negotiation support",
+            "Onboarding alignment"
+          ],
+          why: "Our executive search combines deep domain expertise with confidential outreach and rigorous cultural fit evaluation to ensure long-term leadership success."
+        },
+        "Permanent Staffing": {
+          title: "Permanent Staffing",
+          desc: "Permanent staffing with cultural-fit matching and rigorous vetting to ensure long-term retention and performance.",
+          img: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Job profiling and persona creation",
+            "Sourcing & screening",
+            "Technical and cultural assessment",
+            "Background & reference coordination",
+            "Post-hire check-ins"
+          ],
+          why: "We reduce time-to-hire while improving quality by combining volume capability with quality filters."
+        },
+        "RPO": {
+          title: "Recruitment Process Outsourcing",
+          desc: "Embedded recruitment teams to scale your hiring with predictability and efficiency.",
+          img: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Dedicated embedded talent team",
+            "End-to-end hiring operations",
+            "Process optimization",
+            "Employer branding support",
+            "Real-time reporting & analytics"
+          ],
+          why: "Our RPO model acts as your internal talent engine—aligned, scalable, and measurable."
+        },
+        "HR Consulting": {
+          title: "HR Consulting",
+          desc: "Optimize people operations and retention through strategic HR advisory and system design.",
+          img: "https://images.pexels.com/photos/1181416/pexels-photo-1181416.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Organizational diagnostics",
+            "Retention strategy design",
+            "Compensation benchmarking",
+            "Policy & process formulation",
+            "Leadership development"
+          ],
+          why: "We build resilient people systems that underpin sustainable growth."
+        },
+        "BPO": {
+          title: "BPO Services",
+          desc: "Outsource business processes with domain-expert staffing that keeps operations smooth.",
+          img: "https://images.pexels.com/photos/3183171/pexels-photo-3183171.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Process analysis and implementation",
+            "Domain-specialist teams",
+            "SLAs & quality assurance",
+            "Scalable ramp-up",
+            "Performance dashboards"
+          ],
+          why: "We manage your back-office and support workflows so you can focus on core strategy."
+        },
+        "IT Hiring": {
+          title: "IT Hiring",
+          desc: "Technical talent acquisition for digital transformation, from engineering to infrastructure.",
+          img: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Tech skill mapping",
+            "Coding & system evaluation",
+            "Culture-technology fit screening",
+            "Contract & full-time sourcing",
+            "Market intelligence"
+          ],
+          why: "We deliver engineers who not only build but integrate seamlessly with your product culture."
+        },
+        "Diversity & Inclusion Hiring": {
+          title: "Diversity & Inclusion Hiring",
+          desc: "Build diverse, high-performing teams with equitable sourcing and evaluation strategies.",
+          img: "https://images.pexels.com/photos/3184610/pexels-photo-3184610.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Inclusive sourcing",
+            "Bias-mitigated screening",
+            "Diverse talent pipelines",
+            "Equity-focused evaluation",
+            "Retention support"
+          ],
+          why: "We help create talent ecosystems where diversity drives performance."
+        },
+        "Employer Branding": {
+          title: "Employer Branding",
+          desc: "Position your employer value proposition to attract top-tier talent with compelling narratives.",
+          img: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "EVP development",
+            "Digital presence strategy",
+            "Candidate journey mapping",
+            "Content-driven attraction",
+            "Reputation management"
+          ],
+          why: "Talent chooses brands they trust; we help you become that brand."
+        },
+        "Campus Recruitment": {
+          title: "Campus Recruitment",
+          desc: "Design and execute campus hiring campaigns to secure early-career talent aligned with future growth.",
+          img: "https://images.pexels.com/photos/4145194/pexels-photo-4145194.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "University engagement",
+            "Early talent identification",
+            "Assessment centers",
+            "Onboarding pipeline",
+            "Brand positioning on campus"
+          ],
+          why: "We build scalable early-career pipelines that feed your future leadership."
+        },
+        "Contract Staffing": {
+          title: "Contract Staffing",
+          desc: "Flexible staffing for project-based needs without long-term commitment.",
+          img: "https://images.pexels.com/photos/3184462/pexels-photo-3184462.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Rapid deployment",
+            "Skill-specific sourcing",
+            "Compliance-managed contracts",
+            "Performance tracking",
+            "Flexible engagement models"
+          ],
+          why: "Plug gaps quickly with pre-vetted talent while keeping your cost structure agile."
+        },
+        "HR Technology Integration": {
+          title: "HR Technology Integration",
+          desc: "Integrate and optimize ATS/HRIS systems to make recruitment data-driven and efficient.",
+          img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Tool selection & onboarding",
+            "Workflow automation",
+            "Data hygiene & reporting",
+            "Custom dashboards",
+            "Integration with talent pipelines"
+          ],
+          why: "Technology should empower recruiting; we align systems to your process."
+        },
+        "Outplacement": {
+          title: "Outplacement",
+          desc: "Support transitioning employees with dignity through coaching and placement services.",
+          img: "https://images.pexels.com/photos/3184641/pexels-photo-3184641.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Career transition coaching",
+            "Resume & profile support",
+            "Interview prep",
+            "Placement assistance",
+            "Employer brand preservation"
+          ],
+          why: "We make transitions respectful and strategic, protecting both people and reputation."
+        },
+        "Talent Advisory": {
+          title: "Talent Advisory",
+          desc: "Strategic workforce planning to align human capital with business trajectory.",
+          img: "https://images.pexels.com/photos/3184425/pexels-photo-3184425.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Workforce diagnostics",
+            "Succession planning",
+            "Capability gap analysis",
+            "Talent investment strategy",
+            "Future-fit planning"
+          ],
+          why: "Turn human capital into a competitive advantage with foresight and strategy."
+        },
+        "Career Coaching": {
+          title: "Career Coaching",
+          desc: "Ensure hires thrive with leadership development and onboarding support to reduce attrition.",
+          img: "https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=800",
+          features: [
+            "Personalized growth plans",
+            "Onboarding enablement",
+            "Leadership alignment",
+            "Performance coaching",
+            "Retention optimization"
+          ],
+          why: "Investing in people early prevents costly churn later."
+        }
+      };
+
+      // Tabs and cards
+      const tabs = document.querySelectorAll('.tab');
+      const cards = document.querySelectorAll('.service-card');
+      const detailTitle = document.getElementById('detail-title');
+      const detailDesc = document.getElementById('detail-desc');
+      const detailImage = document.getElementById('detail-image');
+      const learnMoreBtn = document.getElementById('open-service-modal');
+
+      const modalBackdrop = document.getElementById('modal-backdrop');
+      const modalTitle = document.getElementById('modal-title');
+      const modalIntro = document.getElementById('modal-intro');
+      const modalFeatures = document.getElementById('modal-features');
+      const modalWhy = document.getElementById('modal-why');
+      const modalCategory = document.getElementById('modal-category');
+      const modalImage = document.getElementById('modal-image');
+      const modalAction = document.getElementById('modal-action');
+
+      // Set service display
+      function setService(key, pushState = true) {
+        if (!mapping[key]) return;
+        const d = mapping[key];
+        // update tabs/cards active
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.key === key));
+        cards.forEach(c => c.classList.toggle('active', c.dataset.key === key));
+
+        // fade text
+        detailTitle.style.opacity = 0;
+        detailDesc.style.opacity = 0;
+        setTimeout(() => {
+          detailTitle.textContent = d.title;
+          detailDesc.textContent = d.desc;
+          detailTitle.style.opacity = 1;
+          detailDesc.style.opacity = 1;
+        }, 200);
+
+        // image fade
+        detailImage.style.opacity = 0;
+        setTimeout(() => {
+          detailImage.style.backgroundImage = `url('${d.img}')`;
+          detailImage.style.opacity = 1;
+        }, 250);
+
+        // update hash
+        if (pushState) history.replaceState(null, '', `#${encodeURIComponent(key)}`);
+
+        trackEvent('service_view', { service: key });
+      }
+
+      // initialize from hash
+      const initial = decodeURIComponent(location.hash.slice(1)) || 'Executive Search';
+      setService(initial, false);
+
+      tabs.forEach(t => {
+        t.addEventListener('click', () => setService(t.dataset.key));
+      });
+      cards.forEach(c => {
+        c.querySelector('button').addEventListener('click', () => {
+          setService(c.dataset.key);
+          openServiceModal(c.dataset.key);
+        });
+      });
+
+      // Counter animation
+      const counters = document.querySelectorAll('.number');
+      const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            const el = en.target;
+            const targetRaw = parseInt(el.dataset.target, 10);
+            const target = isNaN(targetRaw) ? 0 : targetRaw;
+            const cap = target === 100000 ? 10000 : target; // ensure placements capped
+            if (!el.dataset.animated) {
+              let start = 0;
+              const duration = 1400;
+              const stepTime = Math.max(1, Math.floor(duration / cap));
+              const timer = setInterval(() => {
+                start += Math.ceil(cap / (duration / stepTime));
+                if (start >= cap) {
+                  el.textContent = cap.toLocaleString();
+                  clearInterval(timer);
+                } else {
+                  el.textContent = start.toLocaleString();
+                }
+              }, stepTime);
+              el.dataset.animated = 'true';
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(c => counterObserver.observe(c));
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            en.target.classList.add('active');
+            revealObserver.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      reveals.forEach(r => revealObserver.observe(r));
+
+      // Tilt on detail image
+      const wrapper = document.querySelector('.detail-image-wrapper');
+      if (wrapper && detailImage) {
+        wrapper.addEventListener('mousemove', e => {
+          const rect = wrapper.getBoundingClientRect();
+          const px = (e.clientX - rect.left) / rect.width;
+          const py = (e.clientY - rect.top) / rect.height;
+          const rotateY = (px - 0.5) * 12;
+          const rotateX = (0.5 - py) * 12;
+          detailImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        });
+        wrapper.addEventListener('mouseleave', () => {
+          detailImage.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+      }
+
+      // Service modal
+      function openServiceModal(serviceKey) {
+        if (!mapping[serviceKey]) return;
+        const d = mapping[serviceKey];
+        modalCategory.textContent = serviceKey;
+        modalTitle.textContent = d.title;
+        modalIntro.textContent = d.desc;
+        modalWhy.textContent = d.why;
+        modalImage.style.backgroundImage = `url('${d.img}')`;
+        // features
+        modalFeatures.innerHTML = '';
+        d.features.forEach(f => {
+          const li = document.createElement('li');
+          li.textContent = f;
+          modalFeatures.appendChild(li);
+        });
+        // tags update
+        document.getElementById('tag1').textContent = d.title.split(' ')[0];
+        document.getElementById('tag2').textContent = 'Tailored';
+        document.getElementById('tag3').textContent = 'Trusted';
+        // show
+        modalBackdrop.classList.add('active');
+        trackEvent('learn_more_click', { service: serviceKey });
+      }
+
+      // close modal
+      document.getElementById('modal-close').addEventListener('click', () => {
+        modalBackdrop.classList.remove('active');
+      });
+      modalBackdrop.addEventListener('click', (e) => {
+        if (e.target === modalBackdrop) modalBackdrop.classList.remove('active');
+      });
+
+      // Hook learn more button on detail
+      learnMoreBtn.addEventListener('click', () => {
+        const currentKey = document.querySelector('.tab.active')?.dataset.key || 'Executive Search';
+        openServiceModal(currentKey);
+      });
+
+      // Hook card learn more
+      document.querySelectorAll('.card-learn-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.service;
+          setService(key);
+          openServiceModal(key);
+        });
+      });
+
+      // Get Started / Book a Call modal
+      const formBackdrop = document.getElementById('form-backdrop');
+      const formClose = document.getElementById('form-close');
+      const getStartedBtn = document.getElementById('get-started');
+      const bookCallBtn = document.getElementById('book-call');
+      const formTitle = document.getElementById('form-title');
+      const formSub = document.getElementById('form-sub');
+      const leadForm = document.getElementById('lead-form');
+      const feedbackEl = document.getElementById('lead-feedback');
+
+      function openForm(type) {
+        if (type === 'book') {
+          formTitle.textContent = 'Book a Call';
+          formSub.textContent = 'Choose a time and brief your priority; our team will follow up to schedule.';
+        } else {
+          formTitle.textContent = 'Get Started';
+          formSub.textContent = 'Share your requirements and our team will reach out to craft a tailored talent solution.';
+        }
+        formBackdrop.classList.add('active');
+        trackEvent(type === 'book' ? 'book_call' : 'get_started');
+      }
+      getStartedBtn.addEventListener('click', () => openForm('start'));
+      bookCallBtn.addEventListener('click', () => openForm('book'));
+      formClose.addEventListener('click', () => formBackdrop.classList.remove('active'));
+      formBackdrop.addEventListener('click', (e) => {
+        if (e.target === formBackdrop) formBackdrop.classList.remove('active');
+      });
+
+      // Lead form submit (placeholder, no backend)
+      leadForm.addEventListener('submit', e => {
+        e.preventDefault();
+        feedbackEl.textContent = '';
+        const name = document.getElementById('lead-name').value.trim();
+        const email = document.getElementById('lead-email').value.trim();
+        const company = document.getElementById('lead-company').value.trim();
+        const msg = document.getElementById('lead-message').value.trim();
+        if (!name || !email || !company || !msg) {
+          feedbackEl.textContent = 'Please fill in all fields.';
+          feedbackEl.style.color = '#ffb3b3';
+          return;
+        }
+        // Basic email validation
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          feedbackEl.textContent = 'Enter a valid email.';
+          feedbackEl.style.color = '#ffb3b3';
+          return;
+        }
+        // Simulate success
+        feedbackEl.textContent = 'Thank you! We received your request and will get back to you soon.';
+        feedbackEl.style.color = '#8fffab';
+        leadForm.reset();
+        trackEvent('lead_submitted', { name, company });
+      });
+
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+
+  <!--Privacy pop up-->
+<script>
+  const openPrivacy = document.getElementById('open-privacy');
+  const privacyPopup = document.getElementById('privacy-popup');
+  const closePrivacy = document.getElementById('close-privacy');
+
+  openPrivacy.addEventListener('click', function (e) {
+    e.preventDefault();
+    privacyPopup.style.display = 'flex';
+  });
+
+  closePrivacy.addEventListener('click', function () {
+    privacyPopup.style.display = 'none';
+  });
+
+  // Optional: close on backdrop click
+  privacyPopup.addEventListener('click', function (e) {
+    if (e.target === privacyPopup) {
+      privacyPopup.style.display = 'none';
+    }
+  });
+
+  function openPolicyPopup() {
+    document.getElementById("policyPopup").style.display = "block";
+  }
+
+  function closePolicyPopup() {
+    document.getElementById("policyPopup").style.display = "none";
+  }
+</script>
+
+<!--Consultation Form-->
+  <!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // 🔁 Replace with your EmailJS Public Key
+  })();
+
+  // Show Modal on Button Click
+  document.getElementById("modal-action").addEventListener("click", () => {
+    document.getElementById("consultationModal").style.display = "flex";
+  });
+
+  // Close Modal Function
+  function closeModal() {
+    document.getElementById("consultationModal").style.display = "none";
+  }
+
+  // Handle Form Submit
+  document.getElementById("consultationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this) // 🔁 Replace with your IDs
+      .then(function(response) {
+        alert("✅ Request submitted successfully!");
+        closeModal();
+        document.getElementById("consultationForm").reset();
+      }, function(error) {
+        alert("❌ Failed to send request. Please try again.");
+        console.error(error);
+      });
+  });
+</script>
+
+
+</body>
+</html>
